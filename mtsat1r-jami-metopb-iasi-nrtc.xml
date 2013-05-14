@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS Data and Products Server" version="1.0.1">
+  <!-- Define service to resolve the latest data set received in a directory -->
+  <service name="latest" serviceType="Resolver" base=""/>
+  <!-- Define services to access the data sets -->
+    <service name="allServices" serviceType="Compound" base="">
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+  <!-- EUMETSAT Data Sets -->
+  <dataset name="Near Real Time Corrections (NRTC)">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>jp.go.kisho.mscweb</authority>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation xlink:href="http://gsics.wmo.int/" xlink:title="GSICS Overview"/>
+      <documentation xlink:href="http://mscweb.kishou.go.jp/" xlink:title="JMA and GSICS"/>
+      <documentation xlink:href="http://mscweb.kishou.go.jp/monitoring/gsics/ir/techinfo_mt1r.htm" xlink:title="Algorithm Theoretical Basis Document (ATBD)"/>      
+      <documentation type="Rights">Freely available</documentation>
+      <documentation type="Summary">TBW</documentation>   
+      <creator>
+        <name vocabulary="DIF">Japan Meteorological Agency - Meteorological Satellite Center</name>
+        <contact url="http://mscweb.kishou.go.jp/" email="TBC"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int/" email="ops@eumetsat.int"/>
+      </publisher>
+      <keyword>DEMOSTRATION PRODUCT</keyword>
+      <keyword>MTSAT1R data at 140E degrees</keyword>
+      <keyword>MTSAT1R JAMI calibrated against MetOpB IASI</keyword>
+      <property name="viewer" value="http://vgsics.eumetsat.int/plotter/?datasetUrl={HTTPServer}, GSICS Plotting Tool"/>
+    </metadata>
+    <!-- MTSAT1R, Near Real Time Corrections. -->
+    <dataset name="MTSAT1R JAMI calibrated against MetOpB IASI">
+      <datasetScan name="Demonstration" ID="mtsat1r-jami-metopb-iasi-demo-nrtc" path="mtsat1r-jami-metopb-iasi-demo-nrtc" location="content/product/jma/nrtc/mtsat1r-jami/metopb-iasi/demo/">
+        <metadata inherited="false">
+          <keyword>Demonstration Product</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_JP-JMA-MSC,SATCAL*NRTC*MTSAT1R*JAMI-MetOpB*IASI*demo*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="Pre-Operational" ID="mtsat1r-jami-metopb-iasi-preop-nrtc" path="mtsat1r-jami-metopb-iasi-preop-nrtc" location="content/product/jma/nrtc/mtsat1r-jami/metopb-iasi/preop/">
+        <metadata inherited="false">
+          <keyword>Pre-Operational Product</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_JP-JMA-MSC,SATCAL*NRTC*MTSAT1R*JAMI-MetOpB*IASI*preop*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="Operational" ID="mtsat1r-jami-metopb-iasi-nrtc" path="mtsat1r-jami-metopb-iasi-nrtc" location="content/product/jma/nrtc/mtsat1r-jami/metopb-iasi/oper">
+        <metadata inherited="false">
+          <keyword>Operational Product</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_JP-JMA-MSC,SATCAL*NRTC*MTSAT1R*JAMI-MetOpB*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+  </dataset>
+</catalog>

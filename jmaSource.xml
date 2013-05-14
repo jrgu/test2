@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS Data and Products Server" version="1.0.1">
+  <!-- Define service to resolve the latest data set received in a directory -->
+  <service name="latest" serviceType="Resolver" base=""/>
+  <!-- Define services to access the data sets -->
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  <dataset name="Japan Meteorological Agency (JMA) Source Data">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>http://www.jma.go.jp/jma/indexe.html</authority>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation type="Rights">Freely available</documentation>
+      <creator>
+        <name vocabulary="DIF">Japanese Meteorological Agency</name>
+        <contact url="http://www.jma.go.jp/jma/indexe.html" email="TBD"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">Japanese Meteorological Agency</name>
+        <contact url="http://www.jma.go.jp/jma/indexe.html" email="TBD"/>
+      </publisher>
+      <keyword>JMA</keyword>
+      <keyword>MTSAT</keyword>
+      <keyword>NetCDF</keyword>
+    </metadata>
+    <!-- MTSAT -->
+    <dataset name="MTSAT Satellites">
+      <metadata inherited="true">
+        <documentation type="Summary">MTSAT JAMI in NetCDF Format.</documentation>
+        <documentation xlink:href="http://www.jma.go.jp/jma/indexe.html" xlink:title="JMA Format Guide documentation: TBW"> </documentation>
+        <keyword>JAMI</keyword>
+        <keyword>JMA MTSAT Imager</keyword>
+        <keyword>Geostationary</keyword>
+      </metadata>
+      <datasetScan name="MTSAT1R JAMI Instrument" ID="mtsat1r-jami" path="mtsat1r-jami" location="content/source/jma/mtsat1r-jami/">
+        <filter>
+          <include wildcard="W_JP-JMA-MSC*MTSAT1R-JAMI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MTSAT2 Imager Instrument" ID="mtsat2-imager" path="mtsat2-imager" location="content/source/jma/mtsat2-imager/">
+        <filter>
+          <include wildcard="W_JP-JMA-MSC*MTSAT2-Imager*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+  </dataset>
+</catalog>

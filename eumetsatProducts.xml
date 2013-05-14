@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS Data and Products Server" version="1.0.1">
+  <!-- EUMETSAT GSICS Products -->
+  <dataset name="EUMETSAT GSICS Products">
+    <!-- Near Real Time Corrections. -->
+    <dataset name="Near Real Time Corrections (NRTC)">
+      <catalogRef xlink:href="met7-mviri-metopa-iasi-nrtc.xml" xlink:title="MET7 MVIRI calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="msg1-seviri-metopa-iasi-nrtc.xml" xlink:title="MSG1 SEVIRI calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="msg2-seviri-metopa-iasi-nrtc.xml" xlink:title="MSG2 SEVIRI calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="msg3-seviri-metopa-iasi-nrtc.xml" xlink:title="MSG3 SEVIRI calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="metopa-hirs-metopa-iasi-nrtc.xml" xlink:title="MetOpA HIRS calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="met7-mviri-metopb-iasi-nrtc.xml" xlink:title="MET7 MVIRI calibrated against MetOpB IASI" name=""/>
+      <catalogRef xlink:href="msg1-seviri-metopb-iasi-nrtc.xml" xlink:title="MSG1 SEVIRI calibrated against MetOpB IASI" name=""/>
+      <catalogRef xlink:href="msg2-seviri-metopb-iasi-nrtc.xml" xlink:title="MSG2 SEVIRI calibrated against MetOpB IASI" name=""/>
+      <catalogRef xlink:href="msg3-seviri-metopb-iasi-nrtc.xml" xlink:title="MSG3 SEVIRI calibrated against MetOpB IASI" name=""/>
+      <catalogRef xlink:href="metopb-hirs-metopb-iasi-nrtc.xml" xlink:title="MetOpB HIRS calibrated against MetOpB IASI" name=""/>
+    </dataset>
+    <!-- Re-Analysis Corrections. -->
+    <dataset name="Re-Analysis Corrections (RAC)">
+      <catalogRef xlink:href="met7-mviri-metopa-iasi-rac.xml" xlink:title="MET7 MVIRI calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="msg1-seviri-metopa-iasi-rac.xml" xlink:title="MSG1 SEVIRI calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="msg2-seviri-metopa-iasi-rac.xml" xlink:title="MSG2 SEVIRI calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="msg3-seviri-metopa-iasi-rac.xml" xlink:title="MSG3 SEVIRI calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="metopa-hirs-metopa-iasi-rac.xml" xlink:title="MetOpA HIRS calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="met7-mviri-metopb-iasi-rac.xml" xlink:title="MET7 MVIRI calibrated against MetOpB IASI" name=""/>
+      <catalogRef xlink:href="msg1-seviri-metopb-iasi-rac.xml" xlink:title="MSG1 SEVIRI calibrated against MetOpB IASI" name=""/>
+      <catalogRef xlink:href="msg2-seviri-metopb-iasi-rac.xml" xlink:title="MSG2 SEVIRI calibrated against MetOpB IASI" name=""/>
+      <catalogRef xlink:href="msg3-seviri-metopb-iasi-rac.xml" xlink:title="MSG3 SEVIRI calibrated against MetOpB IASI" name=""/>
+      <catalogRef xlink:href="metopb-hirs-metopb-iasi-rac.xml" xlink:title="MetOpB HIRS calibrated against MetOpB IASI" name=""/>
+    </dataset>
+  </dataset>
+</catalog>

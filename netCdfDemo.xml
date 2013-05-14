@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS DM Server" version="1.0.1">
+<!-- Define service to resolve the latest data set received in a directory -->
+  <service name="latest" serviceType="Resolver" base=""/>
+  <!-- Define services to access the data sets -->
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  <!-- Data Centre NetCDF Data Sets -->
+  <dataset name="Data Centre NetCDF Demonstration Products">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>www.eumetsat.int</authority>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation>Please use the OPENDAP service to examine the netCDF product Format </documentation>
+      <documentation type="Rights">
+            This demostration product is generated with a view to add value and usability to the native data set. Users are invited to evaluate this product and provide constructive feedback to EUMETSAT via its helpdesk (see links below).  Neither the data creator, nor the data publisher, nor any of their employees or contractors, makes any warranty, express or implied, including warranties of merchantability and fitness for a particular purpose, or assumes any legal liability for the accuracy, completeness, or usefulness, of this product.
+	 </documentation>
+      <creator>
+        <name>EUMETSAT Data Centre</name>
+        <contact url="http://www.eumetsat.int" email="ops@eumetsat.int"/>
+      </creator>
+      <publisher>
+        <name>EUMETSAT Data Centre</name>
+        <contact url="http://www.eumetsat.int" email="ops@eumetsat.int"/>
+      </publisher>
+      <keyword>Demonstration product</keyword>
+      <keyword>EUMETSAT/DATA CENTRE</keyword>
+      <keyword>NetCDF</keyword>
+    </metadata>
+    <!-- EUMETSAT DATA -->
+    <dataset name="EUMETSAT">
+      <!-- ASCAT DATA -->
+      <dataset name="ASCAT Demonstration Products">
+        <metadata inherited="true">
+          <serviceName>allServices</serviceName>
+          <keyword>ASCAT</keyword>
+          <keyword>MET-OP</keyword>
+        </metadata>
+        <!-- Level 1B 25 Km Data Set-->
+        <datasetScan name="ASCAT Level 1B 25 Km" ID="demoAscatLevel1B25Km" path="DemoLevel1B25Km" location="content/source/netcdf_demo/ASCAT/LEVEL1B_25/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+        <!-- Level 1B 50 Km Data Set-->
+        <datasetScan name="ASCAT Level 1B 50 Km" ID="demoAscatLevel1B50Km" path="DemoLevel1B50Km" location="content/source/netcdf_demo/ASCAT/LEVEL1B_50/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+        <!-- Level 2 25 Km Data Set-->
+        <datasetScan name="ASCAT Level 2 25 Km" ID="demoAscatLevel225Km" path="DemoLevel225Km" location="content/source/netcdf_demo/ASCAT/LEVEL2_25/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+        <!-- Level 2 50 Km Data Set-->
+        <datasetScan name="ASCAT Level 2 50 Km" ID="demoAscatLevel250Km" path="DemoLevel250Km" location="content/source/netcdf_demo/ASCAT/LEVEL2_50/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+      </dataset>
+      <!-- End ASCAT -->
+      <!-- AVHRR Data Sets -->
+      <dataset name="AVHRR Demonstration Products">
+        <metadata inherited="true">
+          <serviceName>allServices</serviceName>
+          <keyword>AVHRR</keyword>
+          <keyword>MET-OP</keyword>
+        </metadata>
+        <!-- Level 1B Data Set-->
+        <datasetScan name="AVHRR Level 1B" ID="demoAvhrrLevel1B" path="DemoAVHRRLevel1B" location="content/source/netcdf_demo/AVHRR/LEVEL1B/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+        <!-- Level 2 Data Set-->
+        <datasetScan name="AVHRR Level 2 AMV" ID="demoAVHRRL2AMV" path="DemoAVHRRLevel2AMV" location="content/source/netcdf_demo/AVHRR/LEVEL2AMV/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+        <!-- Level 2 Data Set-->
+        <datasetScan name="AVHRR Level 2 NDVI" ID="demoAVHRRL2NDVI" path="DemoAVHRRLevel2NDVI" location="content/source/netcdf_demo/AVHRR/LEVEL2NDVI/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+      </dataset>
+      <!-- END AVHR -->
+      <!-- IASI Data Sets -->
+      <dataset name="IASI Demonstration Products">
+        <metadata inherited="true">
+          <serviceName>allServices</serviceName>
+          <keyword>MET-OP</keyword>
+          <keyword>IASI</keyword>
+        </metadata>
+        <!-- Level 1C Data Set-->
+        <datasetScan name="IASI Level 1C" ID="demoiasiLevel1C" path="DemoIASILevel1C" location="content/source/netcdf_demo/IASI/LEVEL1C/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+        <!-- Level 2 Data Set-->
+        <datasetScan name="IASI Level 2" ID="demoIASILevel2" path="DemoIASILevel2" location="content/source/netcdf_demo/IASI/LEVEL2/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+      </dataset>
+      <!-- END IASI-->
+      <dataset name="HIRS Demonstration Products">
+        <metadata inherited="true">
+          <serviceName>allServices</serviceName>
+          <dataFormat>NetCDF</dataFormat>
+          <keyword>MET-OP</keyword>
+          <keyword>HIRS</keyword>
+        </metadata>
+        <!-- Level 1B Data Set-->
+        <datasetScan name="HIRS Level 1B" ID="demoHIRSLevel1B" path="DemoHIRSLevel1B" location="content/source/netcdf_demo/HIRS/LEVEL1B/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+      </dataset>
+      <!--  END HIRS  -->
+      <!-- AMSA Data Sets -->
+      <dataset name="AMSA Demonstration Products">
+        <metadata inherited="true">
+          <serviceName>allServices</serviceName>
+          <dataFormat>NetCDF</dataFormat>
+          <keyword>MET-OP</keyword>
+          <keyword>AMSA</keyword>
+        </metadata>
+        <!-- Level 1B Data Set-->
+        <datasetScan name="AMSA Level 1B" ID="demoAMSALevel1B" path="DemoAMSALevel1B" location="content/source/netcdf_demo/AMSA/LEVEL1B/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+      </dataset>
+      <!--  END AMSA  -->
+      <!-- MHSx Data Sets -->
+      <dataset name="MHSx Demonstration Products">
+        <metadata inherited="true">
+          <serviceName>allServices</serviceName>
+          <dataFormat>NetCDF</dataFormat>
+          <keyword>MET-OP</keyword>
+          <keyword>MHSx</keyword>
+        </metadata>
+        <!-- Level 1B Data Set-->
+        <datasetScan name="MHSx Level 1B" ID="demoMHSxLevel1B" path="DemoMHSxLevel1B" location="content/source/netcdf_demo/MHSx/LEVEL1B/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+      </dataset>
+      <!--  END AMSA  -->
+      <!-- ATOV Data Sets -->
+      <dataset name="ATOV Demonstration Products">
+        <metadata inherited="true">
+          <serviceName>allServices</serviceName>
+          <dataFormat>NetCDF</dataFormat>
+          <keyword>MET-OP</keyword>
+          <keyword>ATOV</keyword>
+        </metadata>
+        <!-- Level 1B Data Set-->
+        <datasetScan name="ATOV Level 2" ID="demoHirsLevel1B" path="DemoATOVLevel2" location="content/source/netcdf_demo/ATOV/LEVEL2/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+      </dataset>
+      <!--  END ATOV  -->
+      <!-- SEVIRI Data Sets -->
+      <dataset name="SEVIRI Demonstration Products">
+        <metadata inherited="true">
+          <serviceName>allServices</serviceName>
+          <keyword>METEOSAT</keyword>
+          <keyword>SEVIRI</keyword>
+        </metadata>
+        <!-- Level 15 Data Set-->
+        <datasetScan name="MSG Level 15" ID="demoMsgLevel15" path="DemoMSGLevel15" location="content/source/netcdf_demo/SEVIRI/LEVEL15/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+      </dataset>
+      <!--  END SEVIRI  -->
+      <!-- MVIRI Data Sets -->
+      <dataset name="MVIRI Demonstration Products">
+        <metadata inherited="true">
+          <serviceName>allServices</serviceName>
+          <keyword>METEOSAT</keyword>
+          <keyword>SEVIRI</keyword>
+        </metadata>
+        <!-- Level 15 Data Set-->
+        <datasetScan name="MTP Level 15" ID="demoMtpLevel15" path="DemoMTPLevel15" location="content/source/netcdf_demo/MVIRI/LEVEL15/">
+          <filter>
+            <include wildcard="*.nc"/>
+          </filter>
+          <sort>
+            <lexigraphicByName increasing="true"/>
+          </sort>
+        </datasetScan>
+      </dataset>
+      <!--  END MVIRI  -->
+    </dataset>
+    <!--  END EUMETSAT  -->
+  </dataset>
+</catalog>

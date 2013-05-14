@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<Folder FolderName="config">
+		<File FilePath=".\threddsConfig.xml" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="schemas">
+		<File FilePath=".\InvCatalog.1.0.4.xsd" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="catalog" ValidFileSet="Yes" ValidFile=".\InvCatalog.1.0.4.xsd">
+		<File FilePath=".\catalog.xml" HomeFolder="Yes"/>
+		<File FilePath=".\cmaSource.xml" HomeFolder="Yes"/>
+		<File FilePath=".\cnesSource.xml" HomeFolder="Yes"/>
+		<File FilePath=".\eumetsatIntermediate.xml" HomeFolder="Yes"/>
+		<File FilePath=".\eumetsatProducts.xml" HomeFolder="Yes"/>
+		<File FilePath=".\eumetsatSource.xml" HomeFolder="Yes"/>
+		<File FilePath=".\gfz.xml" HomeFolder="Yes"/>
+		<File FilePath=".\jmaIntermediate.xml" HomeFolder="Yes"/>
+		<File FilePath=".\jmaProducts.xml" HomeFolder="Yes"/>
+		<File FilePath=".\jmaSource.xml" HomeFolder="Yes"/>
+		<File FilePath=".\met7-mviri-metopa-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\met7-mviri-metopa-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\met7-mviri-metopb-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\met7-mviri-metopb-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\metopa-hirs-metopa-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\metopa-hirs-metopa-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\metopb-hirs-metopb-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\metopb-hirs-metopb-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\msg1-seviri-metopa-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\msg1-seviri-metopa-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\msg1-seviri-metopb-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\msg1-seviri-metopb-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\msg2-seviri-metopa-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\msg2-seviri-metopa-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\msg2-seviri-metopb-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\msg2-seviri-metopb-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\msg3-seviri-metopa-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\msg3-seviri-metopa-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\msg3-seviri-metopb-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\msg3-seviri-metopb-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat1r-jami-aqua-airs-metopa-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat1r-jami-aqua-airs-metopa-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat1r-jami-aqua-airs-metopb-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat1r-jami-aqua-airs-metopb-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat1r-jami-aqua-airs-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat1r-jami-aqua-airs-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat1r-jami-metopa-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat1r-jami-metopa-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat1r-jami-metopb-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat1r-jami-metopb-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat2-imager-aqua-airs-metopa-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat2-imager-aqua-airs-metopa-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat2-imager-aqua-airs-metopb-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat2-imager-aqua-airs-metopb-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat2-imager-aqua-airs-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat2-imager-aqua-airs-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat2-imager-metopa-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat2-imager-metopa-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat2-imager-metopb-iasi-nrtc.xml" HomeFolder="Yes"/>
+		<File FilePath=".\mtsat2-imager-metopb-iasi-rac.xml" HomeFolder="Yes"/>
+		<File FilePath=".\netCdfDemo.xml" HomeFolder="Yes"/>
+	</Folder>
+</Project>

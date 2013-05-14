@@ -1,0 +1,55 @@
+/* General Styling. */
+
+body {
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  color: black;
+  width: 98%;
+  height: 98%;
+  margin: 8px;
+  padding: 0;
+  background-color: white;
+}
+
+a {
+  position: relative;
+  padding: 6px 0 6px 0;
+  color: black;
+  left: 0px;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+a:hover{
+  color: #0000FF;
+  left: 5px;
+  left: 0px\9;
+}
+
+/* Header. */
+
+h1 {
+  color: white;
+  background-color: #525D76;
+  font-size: x-large;
+  padding: 0 0 2px 0;
+  margin: 0px;
+}
+
+/* Footer. */
+
+h3 {
+  color: black;
+  font-weight: normal;
+  background-color: white;
+  font-size: small;
+  padding: 5px;
+}
+
+/* Folder titles. */
+
+tt {
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: medium;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog name="EUMETSAT GSICS THREDDS Server Master Catalog" xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Source data set directory structure -->
+  <dataset name="GSICS Source Data">
+    <catalogRef xlink:href="eumetsatSource.xml" xlink:title="EUMETSAT" name=""/>
+    <catalogRef xlink:href="cnesSource.xml" xlink:title="CNES" name=""/>
+    <catalogRef xlink:href="jmaSource.xml" xlink:title="JMA" name=""/>
+    <catalogRef xlink:href="cmaSource.xml" xlink:title="CMA" name=""/>
+  </dataset>
+  <!-- GSICS intermediate directory structure -->
+  <dataset name="GSICS Intermediate Data">
+    <catalogRef xlink:href="eumetsatIntermediate.xml" xlink:title="EUMETSAT" name=""/>
+    <catalogRef xlink:href="jmaIntermediate.xml" xlink:title="JMA" name=""/>
+  </dataset>
+  <!-- GSICS products directory structure -->
+  <dataset name="GSICS Products">
+    <catalogRef xlink:href="eumetsatProducts.xml" xlink:title="EUMETSAT" name=""/>
+    <catalogRef xlink:href="jmaProducts.xml" xlink:title="JMA" name=""/>
+  </dataset>
+  <!-- GRAS Data Sets -->
+  <dataset name="GRAS Collaborated Datasets">
+    <catalogRef xlink:href="gfz.xml" xlink:title="GFZ" name=""/>
+  </dataset>
+  <!-- Data Centre NetCDF Data Sets -->
+  <dataset name="Data Centre NetCDF Demonstration Products">
+    <catalogRef xlink:href="netCdfDemo.xml" xlink:title="EUMETSAT" name=""/>
+  </dataset>
+</catalog>

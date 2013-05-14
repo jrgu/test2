@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS Data and Products Server" version="1.0.1">
+  <!-- Define service to resolve the latest data set received in a directory -->
+  <service name="latest" serviceType="Resolver" base=""/>
+  <!-- Define services to access the data sets -->
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  <!-- JMA Data Sets -->
+  <dataset name="Japan Meteorological Agency (JMA) Intermediate Data">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>http://www.jma.go.jp/jma/indexe.html</authority>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation type="Rights">Freely available</documentation>
+      <creator>
+        <name vocabulary="DIF">Japanese Meteorological Agency</name>
+        <contact url="http://www.jma.go.jp/jma/indexe.html" email="TBD"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">Japanese Meteorological Agency</name>
+        <contact url="http://www.jma.go.jp/jma/indexe.html" email="TBD"/>
+      </publisher>
+      <keyword>JMA</keyword>
+      <keyword>MTSAT</keyword>
+      <keyword>NetCDF</keyword>
+    </metadata>
+    <!-- Co-location Data -->
+    <dataset name="Co-location Data">
+      <metadata inherited="true">
+        <documentation type="Summary">TBW</documentation>
+        <documentation xlink:href="http://www.eumetsat.int/" xlink:title="TBW"/>
+        <keyword>GSICS Co-location Data Sets</keyword>
+      </metadata>
+      <datasetScan name="MTSAT1R JAMI collocated with Aqua AIRS" ID="mtsat1r-jami-aqua-airs-colloc" path="mtsat1r-jami-aqua-airs-colloc" location="content/intermediate/jma/colloc/mtsat1r-jami/aqua-airs/">
+        <metadata inherited="false">
+          <keyword>JMA MTSAT1R JAMI collocated with Aqua AIRS Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_JP-JMA-MSC*COLLOC*MTSAT1R*JAMI-Aqua*AIRS*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MTSAT1R JAMI collocated with MetOpA IASI" ID="mtsat1r-jami-metopa-iasi-colloc" path="mtsat1r-jami-metopa-iasi-colloc" location="content/intermediate/jma/colloc/mtsat1r-jami/metopa-iasi/">
+        <metadata inherited="false">
+          <keyword>JMA MTSAT1R JAMI collocated with MetOpA IASI Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_JP-JMA-MSC*COLLOC*MTSAT1R*JAMI-MetOpA*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MTSAT1R JAMI collocated with MetOpB IASI" ID="mtsat1r-jami-metopb-iasi-colloc" path="mtsat1r-jami-metopb-iasi-colloc" location="content/intermediate/jma/colloc/mtsat1r-jami/metopb-iasi/">
+        <metadata inherited="false">
+          <keyword>JMA MTSAT1R JAMI collocated with MetOpB IASI Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_JP-JMA-MSC*COLLOC*MTSAT1R*JAMI-MetOpB*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MTSAT2 Imager collocated with Aqau AIRS" ID="mtsat2-imager-aqua-airs-colloc" path="mtsat2-imager-aqua-airs-colloc" location="content/intermediate/jma/colloc/mtsat2-imager/aqua-airs/">
+        <metadata inherited="false">
+          <keyword>JMA MTSAT2 Imager collocated with Aqua AIRS Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_JP-JMA-MSC*COLLOC*MTSAT2*Imager-Aqua*AIRS*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MTSAT2 Imager collocated with MetOpA IASI" ID="mtsat2-imager-metopa-iasi-colloc" path="mtsat2-imager-metopa-iasi-colloc" location="content/intermediate/jma/colloc/mtsat2-imager/metopa-iasi/">
+        <metadata inherited="false">
+          <keyword>JMA MTSAT2 Imager collocated with MetOpA IASI Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_JP-JMA-MSC*COLLOC*MTSAT2*Imager-MetOpA*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MTSAT2 Imager collocated with MetOpB IASI" ID="mtsat2-imager-metopb-iasi-colloc" path="mtsat2-imager-metopb-iasi-colloc" location="content/intermediate/jma/colloc/mtsat2-imager/metopb-iasi/">
+        <metadata inherited="false">
+          <keyword>JMA MTSAT2 Imager collocated with MetOpB IASI Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_JP-JMA-MSC*COLLOC*MTSAT2*Imager-MetOpB*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+  </dataset>
+</catalog>

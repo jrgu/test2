@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS Data and Products Server" version="1.0.1">
+  <!-- JMA GSICS Products -->
+  <dataset name="JMA GSICS Products">
+    <!-- Near Real Time Corrections. -->
+    <dataset name="Near Real Time Corrections (NRTC)">
+      <catalogRef xlink:href="mtsat1r-jami-aqua-airs-nrtc.xml" xlink:title="MTSAT1R JAMI calibrated against Aqua AIRS" name=""/>
+      <catalogRef xlink:href="mtsat1r-jami-aqua-airs-metopa-iasi-nrtc.xml" xlink:title="MTSAT1R JAMI calibrated against Aqua AIRS and MetOpA IASI" name=""/>
+      <catalogRef xlink:href="mtsat1r-jami-aqua-airs-metopb-iasi-nrtc.xml" xlink:title="MTSAT1R JAMI calibrated against Aqua AIRS and MetOpB IASI" name=""/>
+      <catalogRef xlink:href="mtsat1r-jami-metopa-iasi-nrtc.xml" xlink:title="MTSAT1R JAMI calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="mtsat1r-jami-metopb-iasi-nrtc.xml" xlink:title="MTSAT1R JAMI calibrated against MetOpB IASI" name=""/>
+      <catalogRef xlink:href="mtsat2-imager-aqua-airs-nrtc.xml" xlink:title="MTSAT2 Imager calibrated against Aqua AIRS" name=""/>
+      <catalogRef xlink:href="mtsat2-imager-aqua-airs-metopa-iasi-nrtc.xml" xlink:title="MTSAT2 Imager calibrated against Aqua AIRS and MetOpA IASI" name=""/>
+      <catalogRef xlink:href="mtsat2-imager-aqua-airs-metopb-iasi-nrtc.xml" xlink:title="MTSAT2 Imager calibrated against Aqua AIRS and MetOpB IASI" name=""/>
+      <catalogRef xlink:href="mtsat2-imager-metopa-iasi-nrtc.xml" xlink:title="MTSAT2 Imager calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="mtsat2-imager-metopb-iasi-nrtc.xml" xlink:title="MTSAT2 Imager calibrated against MetOpB IASI" name=""/>
+    </dataset>
+    <!-- Re-Analysis Corrections. -->
+    <dataset name="Re-Analysis Corrections (RAC)">
+      <catalogRef xlink:href="mtsat1r-jami-aqua-airs-rac.xml" xlink:title="MTSAT1R JAMI calibrated against Aqua AIRS" name=""/>
+      <catalogRef xlink:href="mtsat1r-jami-aqua-airs-metopa-iasi-rac.xml" xlink:title="MTSAT1R JAMI calibrated against Aqua AIRS and MetOpA IASI" name=""/>
+      <catalogRef xlink:href="mtsat1r-jami-aqua-airs-metopb-iasi-rac.xml" xlink:title="MTSAT1R JAMI calibrated against Aqua AIRS and MetOpB IASI" name=""/>
+      <catalogRef xlink:href="mtsat1r-jami-metopa-iasi-rac.xml" xlink:title="MTSAT1R JAMI calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="mtsat1r-jami-metopb-iasi-rac.xml" xlink:title="MTSAT1R JAMI calibrated against MetOpB IASI" name=""/>
+      <catalogRef xlink:href="mtsat2-imager-aqua-airs-rac.xml" xlink:title="MTSAT2 Imager calibrated against Aqua AIRS" name=""/>
+      <catalogRef xlink:href="mtsat2-imager-aqua-airs-metopa-iasi-rac.xml" xlink:title="MTSAT2 Imager calibrated against Aqua AIRS and MetOpA IASI" name=""/>
+      <catalogRef xlink:href="mtsat2-imager-aqua-airs-metopb-iasi-rac.xml" xlink:title="MTSAT2 Imager calibrated against Aqua AIRS and MetOpB IASI" name=""/>
+      <catalogRef xlink:href="mtsat2-imager-metopa-iasi-rac.xml" xlink:title="MTSAT2 Imager calibrated against MetOpA IASI" name=""/>
+      <catalogRef xlink:href="mtsat2-imager-metopb-iasi-rac.xml" xlink:title="MTSAT2 Imager calibrated against MetOpB IASI" name=""/>
+    </dataset>
+  </dataset>
+</catalog>

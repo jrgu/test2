@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS Data and Products Server" version="1.0.1">
+  <!-- Define service to resolve the latest data set received in a directory -->
+  <service name="latest" serviceType="Resolver" base=""/>
+  <!-- Define services to access the data sets -->
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+  <!-- EUMETSAT Data Sets -->
+  <dataset name="Near Real Time Corrections (NRTC)">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>int.eumetsat</authority>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation xlink:href="http://gsics.wmo.int/" xlink:title="GSICS Overview"/>
+      <documentation xlink:href="http://www.eumetsat.int/Home/Main/AboutEUMETSAT/InternationalRelations/CGMS/SP_1226312587804?l=en" xlink:title="EUMETSAT and GSICS"/>
+      <documentation type="Algorithm Theoretical Basis Document (ATBD)">TBW</documentation>
+      <documentation type="Rights">Freely available</documentation>
+      <documentation type="Summary">Coefficients of the GSICS Correction for the HIRS instrument channels using a LEO hyperspectral reference instrument</documentation>   
+      <creator>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int" email="ops@eumetsat.int"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int/" email="ops@eumetsat.int"/>
+      </publisher>
+      <keyword>PROTOTYPE PRODUCT</keyword>
+      <keyword>EUMETSAT</keyword>
+      <keyword>NetCDF</keyword>
+      <keyword>MetOpB HIRS calibrated against MetOpB IASI</keyword>
+      <keyword>Near Real Time Corrections</keyword>
+      <property name="viewer" value="http://vgsics.eumetsat.int/plotter/?datasetUrl={HTTPServer}, GSICS Plotting Tool"/>
+    </metadata>
+    <!-- MSG1, Near Real Time Corrections. -->
+    <dataset name="MetOpB HIRS calibrated against MetOpB IASI">
+      <datasetScan name="Demonstration" ID="metopb-hirs-metopb-iasi-demo-nrtc" path="metopb-hirs-metopb-iasi-demo-nrtc" location="content/product/eumetsat/nrtc/metopb-hirs/metopb-iasi/demo/">
+        <metadata inherited="false">
+          <keyword>Demonstration MetOpB HIRS calibrated against MetOpB IASI NRTC</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt,SATCAL*NRTC*MetOpB*HIRS-MetOpB*IASI*demo*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="Pre-Operational" ID="metopb-hirs-metopb-iasi-preop-nrtc" path="metopb-hirs-metopb-iasi-preop-nrtc" location="content/product/eumetsat/nrtc/metopb-hirs/metopb-iasi/preop/">
+        <metadata inherited="false">
+          <keyword>Pre-operational MetOpB HIRS calibrated against MetOpB IASI NRTC</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt,SATCAL*NRTC*MetOpB*HIRS-MetOpB*IASI*preop*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="Operational" ID="metopb-hirs-metopb-iasi-nrtc" path="metopb-hirs-metopb-iasi-nrtc" location="content/product/eumetsat/nrtc/metopb-hirs/metopb-iasi/oper">
+        <metadata inherited="false">
+          <keyword>Operational MetOpB HIRS calibrated against MetOpB IASI NRTC</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt,SATCAL*NRTC*MetOpB*HIRS-MetOpB*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+  </dataset>
+</catalog>

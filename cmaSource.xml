@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS Data and Products Server" version="1.0.1">
+  <!-- Define service to resolve the latest data set received in a directory -->
+  <service name="latest" serviceType="Resolver" base=""/>
+  <!-- Define services to access the data sets -->
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  <!-- CMA Data Sets -->
+  <dataset name="CMA Source Data">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>www.eumetsat.int</authority>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation type="Rights">Freely available</documentation>
+      <creator>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int" email="ops@eumetsat.int"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int/" email="ops@eumetsat.int"/>
+      </publisher>
+      <keyword>EUMETSAT</keyword>
+      <keyword>NetCDF</keyword>
+    </metadata>
+    <!-- IASI Instrument -->
+    <dataset name="EUMETSAT Polar System Satellites">
+      <metadata inherited="true">
+        <documentation type="Summary">CMA EPS IASI Level 1C Spectra in NetCDF Format.</documentation>
+        <documentation xlink:href="http://www.eumetsat.int/Home/Main/DataProducts/Resources/index.htm" xlink:title="EUMETSAT Format Guide documentation"> </documentation>
+        <keyword>EPS IASI 1C</keyword>
+        <keyword>Polar Orbiting</keyword>
+        <dataType>Swaths</dataType>
+      </metadata>
+      <datasetScan name="MetOpA IASI Instrument" ID="cma-metopa-iasi" path="cma-metopa-iasi" location="content/source/cma/metopa-iasi/">
+        <filter>
+          <include wildcard="W_XX-EUMETSAT*MetOpA*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MetOpB IASI Instrument" ID="cma-metopb-iasi" path="cma-metopb-iasi" location="content/source/cma/metopb-iasi/">
+        <filter>
+          <include wildcard="W_XX-EUMETSAT*MetOpB*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+  </dataset>
+</catalog>

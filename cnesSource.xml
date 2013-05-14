@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS Data and Products Server" version="1.0.1">
+  <!-- Define service to resolve the latest data set received in a directory -->
+  <service name="latest" serviceType="Resolver" base=""/>
+  <!-- Define services to access the data sets -->
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  <!-- EUMETSAT Data Sets -->
+  <dataset name="EUMETSAT Source Data for CNES SADE Project">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>www.eumetsat.int</authority>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation type="Rights">Freely available</documentation>
+      <creator>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int" email="ops@eumetsat.int"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int/" email="ops@eumetsat.int"/>
+      </publisher>
+      <keyword>EUMETSAT</keyword>
+      <keyword>NetCDF</keyword>
+    </metadata>
+    <!-- Meteosat 8-9, Second Generation Satellites. -->
+    <dataset name="Meteosat Second Generation Satellites">
+      <metadata inherited="true">
+        <documentation xlink:href="http://www.eumetsat.int/Home/Main/DataProducts/Resources/index.htm" xlink:title="EUMETSAT Format Guide documentation"> </documentation>
+        <keyword>Meteosat Second Generation Data</keyword>
+        <keyword>GeoStationary</keyword>
+        <dataType>Grid</dataType>
+        <geospatialCoverage>
+          <northsouth>
+            <start>81</start>
+            <size>162.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>79.0</start>
+            <size>158.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+        </geospatialCoverage>
+      </metadata>
+      <datasetScan name="MSG2 SEVIRI Instrument" ID="msg2-seviri" path="msg2-seviri" location="content/source/cnes/msg2-seviri/">
+        <metadata inherited="true">
+          <documentation type="Summary">EUMETSAT SEVIRI instrument scanning upto 11 standard channels. Data Set contains MSG information in NetCDF Format.</documentation>
+          <keyword>Source MSG15 rectified to 0 degrees</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT*MSG2*MSG15*.nc"/>
+          <include wildcard="W_XX-EUMETSAT*MSG2*SEVIRI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MSG2 Cloud Mask Meteorological Product" ID="msg2-clmk" path="msg2-clmk" location="content/source/cnes/msg2-clmk/">
+        <metadata inherited="true">
+          <documentation type="Summary">EUMETSAT Meteorological Cloud Mask Product. Data Set contains the Cloud Mask in NetCDF Format.</documentation>
+          <keyword>Cloud Mask Product rectified 0 degrees</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_*SING*LEV*SAT*MSG2*CLM*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+  </dataset>
+</catalog>

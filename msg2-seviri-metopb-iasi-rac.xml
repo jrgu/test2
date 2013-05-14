@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS Data and Products Server" version="1.0.1">
+  <!-- Define service to resolve the latest data set received in a directory -->
+  <service name="latest" serviceType="Resolver" base=""/>
+  <!-- Define services to access the data sets -->
+    <service name="allServices" serviceType="Compound" base="">
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+  <!-- EUMETSAT Data Sets -->
+  <dataset name="Re-Analysis Corrections (RAC)">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>int.eumetsat</authority>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation xlink:href="http://gsics.wmo.int/" xlink:title="GSICS Overview"/>
+      <documentation xlink:href="http://www.eumetsat.int/Home/Main/AboutEUMETSAT/InternationalRelations/CGMS/SP_1226312587804?l=en" xlink:title="EUMETSAT and GSICS"/>
+      <documentation xlink:href="http://www.eumetsat.int/groups/ops/documents/document/PDF_ATBD_GSICS_SEVIRI_IASI.pdf" xlink:title="Algorithm Theoretical Basis Document (ATBD)"/>      
+      <documentation type="Rights">Freely available</documentation>
+      <documentation type="Summary">Coefficients of the GSICS Correction for the infrared channels of a GEOstationary imager using a LEO hyperspectral reference instrument</documentation>      
+      <creator>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int" email="ops@eumetsat.int"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int/" email="ops@eumetsat.int"/>
+      </publisher>
+      <keyword>PRE-OPERATIONAL PRODUCT</keyword>
+      <keyword>EUMETSAT</keyword>
+      <keyword>NetCDF</keyword>
+      <keyword>MSG2 SEVIRI calibrated against MetOpB IASI</keyword>
+      <keyword>Re-Analysis Corrections</keyword>
+      <property name="viewer" value="http://vgsics.eumetsat.int/plotter/?datasetUrl={HTTPServer}, GSICS Plotting Tool"/>
+    </metadata>
+    <!-- MSG2, Re-Analysis Corrections. -->
+    <dataset name="MSG2 SEVIRI calibrated against MetOpB IASI">
+      <datasetScan name="Demonstration" ID="msg2-seviri-metopb-iasi-demo-rac" path="msg2-seviri-metopb-iasi-demo-rac" location="content/product/eumetsat/rac/msg2-seviri/metopb-iasi/demo/">
+        <metadata inherited="false">
+          <keyword>Demonstration MSG2 SEVIRI calibrated against MetOpB IASI RAC</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt,SATCAL*RAC*MSG2*SEVIRI-MetOpB*IASI*demo*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="Pre-Operational" ID="msg2-seviri-metopb-iasi-preop-rac" path="msg2-seviri-metopb-iasi-preop-rac" location="content/product/eumetsat/rac/msg2-seviri/metopb-iasi/preop/">
+        <metadata inherited="false">
+          <keyword>Pre-operational MSG2 SEVIRI calibrated against MetOpB IASI RAC</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt,SATCAL*RAC*MSG2*SEVIRI-MetOpB*IASI*preop*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="Operational" ID="msg2-seviri-metopb-iasi-rac" path="msg2-seviri-metopb-iasi-rac" location="content/product/eumetsat/rac/msg2-seviri/metopb-iasi/oper">
+        <metadata inherited="false">
+          <keyword>Operational MSG2 SEVIRI calibrated against MetOpB IASI RAC</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt,SATCAL*RAC*MSG2*SEVIRI-MetOpB*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+  </dataset>
+</catalog>

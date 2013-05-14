@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS Data and Products Server" version="1.0.1">
+  <!-- Define service to resolve the latest data set received in a directory -->
+  <service name="latest" serviceType="Resolver" base=""/>
+  <!-- Define services to access the data sets -->
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  <!-- EUMETSAT Data Sets -->
+  <dataset name="EUMETSAT Source Data">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>www.eumetsat.int</authority>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation type="Rights">Freely available</documentation>
+      <creator>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int" email="ops@eumetsat.int"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int/" email="ops@eumetsat.int"/>
+      </publisher>
+      <keyword>EUMETSAT</keyword>
+      <keyword>NetCDF</keyword>
+    </metadata>
+    <!-- GEOSTATIONARY SATELLITES -->
+    <dataset name="Meteosat First Generation Satellites">
+      <metadata inherited="true">
+        <documentation type="Summary">EUMETSAT MVIRI instrument scanning
+					3 channels. Data Set
+					contains MFG information in NetCDF Format.
+				</documentation>
+        <documentation xlink:href="http://www.eumetsat.int/Home/Main/DataProducts/Resources/index.htm" xlink:title="EUMETSAT Format Guide documentation">
+				</documentation>
+        <keyword>Meteosat First Generation Data</keyword>
+        <keyword>Source MFG15 is rectified 0 degrees</keyword>
+        <keyword>GeoStationary</keyword>
+        <dataType>Grid</dataType>
+        <geospatialCoverage>
+          <northsouth>
+            <start>81</start>
+            <size>162.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>79.0</start>
+            <size>158.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+        </geospatialCoverage>
+      </metadata>
+      <datasetScan name="MET7 MVIRI Instrument" ID="met7-mviri" path="met7-mviri" location="content/source/eumetsat/met7-mviri/">
+        <filter>
+          <include wildcard="W_XX-EUMETSAT*MET7*MVIRI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+    <!-- Meteosat 8-9, Second Generation Satellites. -->
+    <dataset name="Meteosat Second Generation Satellites">
+      <metadata inherited="true">
+        <documentation type="Summary">EUMETSAT SEVIRI instrument
+					scanning upto 11 standard
+					channels. Data Set contains MSG information in NetCDF Format.
+				</documentation>
+        <documentation xlink:href="http://www.eumetsat.int/Home/Main/DataProducts/Resources/index.htm" xlink:title="EUMETSAT Format Guide documentation">
+				</documentation>
+        <keyword>Meteosat Second Generation Data</keyword>
+        <keyword>Source MSG15 rectified to 0 degrees</keyword>
+        <keyword>GeoStationary</keyword>
+        <dataType>Grid</dataType>
+        <geospatialCoverage>
+          <northsouth>
+            <start>81</start>
+            <size>162.0</size>
+            <units>degrees_north</units>
+          </northsouth>
+          <eastwest>
+            <start>79.0</start>
+            <size>158.0</size>
+            <units>degrees_east</units>
+          </eastwest>
+        </geospatialCoverage>
+      </metadata>
+      <datasetScan name="MSG1 SEVIRI Instrument" ID="msg1-seviri" path="msg1-seviri" location="content/source/eumetsat/msg1-seviri/">
+        <filter>
+          <include wildcard="W_XX-EUMETSAT*MSG1*SEVIRI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MSG2 SEVIRI Instrument" ID="msg2-seviri" path="msg2-seviri" location="content/source/eumetsat/msg2-seviri/">
+        <filter>
+          <include wildcard="W_XX-EUMETSAT*MSG2*SEVIRI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MSG3 SEVIRI Instrument" ID="msg3-seviri" path="msg3-seviri" location="content/source/eumetsat/msg3-seviri/">
+        <filter>
+          <include wildcard="W_XX-EUMETSAT*MSG3*SEVIRI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+    <!-- IASI Instrument -->
+    <dataset name="EUMETSAT Polar System Satellites">
+      <metadata inherited="true">
+        <documentation type="Summary">EUMETSAT EPS IASI Level 1C Spectra
+					in NetCDF Format.</documentation>
+        <documentation xlink:href="http://www.eumetsat.int/Home/Main/DataProducts/Resources/index.htm" xlink:title="EUMETSAT Format Guide documentation">
+				</documentation>
+        <keyword>EPS IASI 1C</keyword>
+        <keyword>Polar Orbiting</keyword>
+        <dataType>Swaths</dataType>
+      </metadata>
+      <datasetScan name="MetOpA IASI Instrument" ID="metopa-iasi" path="metopa-iasi" location="content/source/eumetsat/metopa-iasi/">
+        <filter>
+          <include wildcard="W_XX-EUMETSAT*MetOpA*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MetOpB IASI Instrument" ID="metopb-iasi" path="metopb-iasi" location="content/source/eumetsat/metopb-iasi/">
+        <filter>
+          <include wildcard="W_XX-EUMETSAT*MetOpB*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+  </dataset>
+</catalog>

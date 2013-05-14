@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS Data and Products Server" version="1.0.1">
+  <!-- Define service to resolve the latest data set received in a directory -->
+  <service name="latest" serviceType="Resolver" base=""/>
+  <!-- Define services to access the data sets -->
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  <!-- EUMETSAT Data Sets -->
+  <dataset name="EUMETSAT Intermediate Data">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>www.eumetsat.int</authority>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation type="Rights">Freely available</documentation>
+      <creator>
+        <name vocabulary="DIF">EUMETSAT Archive</name>
+        <contact url="http://www.eumetsat.int" email="ops@eumetsat.int"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">EUMETSAT User Services</name>
+        <contact url="http://www.eumetsat.int/" email="ops@eumetsat.int"/>
+      </publisher>
+      <keyword>EUMETSAT</keyword>
+      <keyword>NetCDF</keyword>
+    </metadata>
+    <!-- Co-location Data -->
+    <dataset name="Collocation Data">
+      <metadata inherited="true">
+        <documentation type="Summary">TBW</documentation>
+        <documentation xlink:href="http://www.eumetsat.int/" xlink:title="TBW">
+            </documentation>
+        <keyword>GSICS Co-location Data Sets</keyword>
+      </metadata>
+      <datasetScan name="MET7 MVIRI collocated with MetOpA IASI" ID="met7-mviri-metopa-iasi-colloc" path="met7-mviri-metopa-iasi-colloc" location="content/intermediate/eumetsat/colloc/met7-mviri/metopa-iasi/">
+        <metadata inherited="false">
+          <keyword>EUMETSAT MET7 MVIRI collocated with MetOpA IASI Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt*COLLOC*MET7*MVIRI*MetOpA*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MSG1 SEVIRI collocated with MetOpA IASI" ID="msg1-seviri-metopa-iasi-colloc" path="msg1-seviri-metopa-iasi-colloc" location="content/intermediate/eumetsat/colloc/msg1-seviri/metopa-iasi/">
+        <metadata inherited="false">
+          <keyword>EUMETSAT MSG1 SEVIRI collocated with MetOpA IASI Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt*COLLOC*MSG1*SEVIRI*MetOpA*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MSG2 SEVIRI collocated with MetOpA IASI" ID="msg2-seviri-metopa-iasi-colloc" path="msg2-seviri-metopa-iasi-colloc" location="content/intermediate/eumetsat/colloc/msg2-seviri/metopa-iasi/">
+        <metadata inherited="false">
+          <keyword>EUMETSAT MSG2 SEVIRI collocated with MetOpA IASI Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt*COLLOC*MSG2*SEVIRI*MetOpA*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MSG3 SEVIRI collocated with MetOpA IASI" ID="msg3-seviri-metopa-iasi-colloc" path="msg3-seviri-metopa-iasi-colloc" location="content/intermediate/eumetsat/colloc/msg3-seviri/metopa-iasi/">
+        <metadata inherited="false">
+          <keyword>EUMETSAT MSG3 SEVIRI collocated with MetOpA IASI Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt*COLLOC*MSG3*SEVIRI*MetOpA*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <!-- METOP B    -->
+      <datasetScan name="MET7 MVIRI collocated with MetOpB IASI" ID="met7-mviri-metopb-iasi-colloc" path="met7-mviri-metopb-iasi-colloc" location="content/intermediate/eumetsat/colloc/met7-mviri/metopb-iasi/">
+        <metadata inherited="false">
+          <keyword>EUMETSAT MET7 MVIRI collocated with MetOpB IASI Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt*COLLOC*MET7*MVIRI*MetOpB*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MSG1 SEVIRI collocated with MetOpB IASI" ID="msg1-seviri-metopb-iasi-colloc" path="msg1-seviri-metopb-iasi-colloc" location="content/intermediate/eumetsat/colloc/msg1-seviri/metopb-iasi/">
+        <metadata inherited="false">
+          <keyword>EUMETSAT MSG1 SEVIRI collocated with MetOpB IASI Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt*COLLOC*MSG1*SEVIRI*MetOpB*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+       <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MSG2 SEVIRI collocated with MetOpB IASI" ID="msg2-seviri-metopb-iasi-colloc" path="msg2-seviri-metopb-iasi-colloc" location="content/intermediate/eumetsat/colloc/msg2-seviri/metopb-iasi/">
+        <metadata inherited="false">
+          <keyword>EUMETSAT MSG2 SEVIRI collocated with MetOpB IASI Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt*COLLOC*MSG2*SEVIRI*MetOpB*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="MSG3 SEVIRI collocated with MetOpB IASI" ID="msg3-seviri-metopb-iasi-colloc" path="msg3-seviri-metopb-iasi-colloc" location="content/intermediate/eumetsat/colloc/msg3-seviri/metopb-iasi/">
+        <metadata inherited="false">
+          <keyword>EUMETSAT MSG3 SEVIRI collocated with MetOpB IASI Co-location Data</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_XX-EUMETSAT-Darmstadt*COLLOC*MSG3*SEVIRI*MetOpB*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+  </dataset>
+</catalog>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS Data and Products Server" version="1.0.1">
+  <!-- Define service to resolve the latest data set received in a directory -->
+  <service name="latest" serviceType="Resolver" base=""/>
+  <!-- Define services to access the data sets -->
+    <service name="allServices" serviceType="Compound" base="">
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+  </service>
+  <!-- EUMETSAT Data Sets -->
+  <dataset name="Re-Analysis Corrections (RAC)">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+     <authority>jp.go.kisho.mscweb</authority>
+      <dataFormat>NetCDF</dataFormat>
+      <documentation xlink:href="http://gsics.wmo.int/" xlink:title="GSICS Overview"/>
+      <documentation xlink:href="http://mscweb.kishou.go.jp/" xlink:title="JMA and GSICS"/>
+      <documentation xlink:href="http://mscweb.kishou.go.jp/monitoring/gsics/ir/techinfo_mt2.htm" xlink:title="Algorithm Theoretical Basis Document (ATBD)"/>      
+      <documentation type="Rights">Freely available</documentation>
+      <documentation type="Summary">TBW</documentation>   
+      <creator>
+        <name vocabulary="DIF">Japan Meteorological Agency - Meteorological Satellite Center</name>
+        <contact url="http://mscweb.kishou.go.jp/" email="TBC"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int/" email="ops@eumetsat.int"/>
+      </publisher>
+      <keyword>DEMOSTRATION PRODUCT</keyword>   
+      <keyword>MTSAT2 data at 140E degrees</keyword>
+      <keyword>MTSAT2 Imager calibrated against Aqua AIRS and MetOpA IASI</keyword>
+      <property name="viewer" value="http://vgsics.eumetsat.int/plotter/?datasetUrl={HTTPServer}, GSICS Plotting Tool"/>
+    </metadata>
+    <!-- MTSAT2, Re-Analysis Corrections. -->
+    <dataset name="MTSAT2 Imager calibrated against Aqua AIRS and MetOpA IASI">
+      <datasetScan name="Demonstration" ID="mtsat2-imager-aqua-airs-metopa-iasi-demo-rac" path="mtsat2-imager-aqua-airs-metopa-iasi-demo-rac" location="content/product/jma/rac/mtsat2-imager/aqua-airs-metopa-iasi/demo/">
+        <metadata inherited="false">
+          <keyword>Demonstration Product</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_JP-JMA-MSC,SATCAL*RAC*MTSAT2*Imager-Aqua*AIRS*MetOpA*IASI*demo*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="Pre-Operational" ID="mtsat2-imager-aqua-airs-metopa-iasi-preop-rac" path="mtsat2-imager-aqua-airs-metopa-iasi-preop-rac" location="content/product/jma/rac/mtsat2-imager/aqua-airs-metopa-iasi/preop/">
+        <metadata inherited="false">
+          <keyword>Pre-Operational Product</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_JP-JMA-MSC,SATCAL*RAC*MTSAT2*Imager-Aqua*AIRS*MetOpA*IASI*preop*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        
+        <addDatasetSize/>
+      </datasetScan>
+      <datasetScan name="Operational" ID="mtsat2-imager-aqua-airs-metopa-iasi-rac" path="mtsat2-imager-aqua-airs-metopa-iasi-rac" location="content/product/jma/rac/mtsat2-imager/aqua-airs-metopa-iasi/oper">
+        <metadata inherited="false">
+          <keyword>Operational Product</keyword>
+        </metadata>
+        <filter>
+          <include wildcard="W_JP-JMA-MSC,SATCAL*RAC*MTSAT2*Imager-Aqua*AIRS*MetOpA*IASI*.nc"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="false"/>
+        </sort>
+        
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+  </dataset>
+</catalog>

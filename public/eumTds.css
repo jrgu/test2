@@ -1,0 +1,126 @@
+/* General Styling */
+
+body{
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: small;
+  width: 98%;
+  height: 98%;
+  margin: 8px;
+  padding: 0;
+  background-color: white;
+}
+
+table {
+  border-spacing: 0px;
+}
+
+b {
+  font-weight: bold;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Logo. */
+
+img{
+  margin: 0px 0px 10px -1px;
+}
+
+/* First header, left to logo. */
+
+td > h3 {
+  color: black;
+  float: right;
+  clear: right;  
+  font-size: medium;
+  margin: 0px;
+  padding: 2px 0 2px 5px;
+}
+
+h3 a {
+  color: green;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+}
+
+h3 a:visited {
+  
+}
+
+h3 a:hover{
+  color: #0099FF;
+}
+
+/* Second header, catalog and dataset name. */
+
+h2 {
+  color: white;
+  background-color: #525D76;
+  font-size: large;
+  margin: 0px;
+  padding: 2px 0 2px 5px;
+}
+
+/* Section headers. */
+
+body > h3 {
+  color: white;
+  background-color: #525D76;
+  font-size: large;
+  margin: 0px;
+  padding: 2px 0 2px 5px;
+}
+
+/* Lists. */
+
+ul{
+  margin-left: 0em;
+  padding-left: 0.2em;
+  margin-bottom: 1em;
+}
+
+ul li{
+  list-style: none;
+  background: url(bullet.gif) 0em 0.5em no-repeat;
+  padding-left: 0.8em;
+}
+
+ul li ul li{
+  background-image: url(bullet_child.gif);
+}
+
+ol{
+  margin-left: 1.5em;
+  padding-left: 0em;
+}
+
+ol li{
+  list-style:decimal;
+  background-image: none;
+  padding-left: 0em;
+}
+
+/* Links inside a list. */
+
+li a {
+  color: blue;
+  text-decoration: none;
+}
+
+li a:visited {
+  color: #0099FF;
+}
+
+li a:hover{
+  text-decoration: underline;
+}

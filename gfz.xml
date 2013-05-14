@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS-EUMETSAT GSICS DM Server" version="1.0.1">
+  <!-- Define service to resolve the latest data set received in a directory -->
+  <service name="latest" serviceType="Resolver" base=""/>
+  <!-- Define services to access the data sets -->
+  <service name="allServices" serviceType="Compound" base="">
+    <service name="ncml" serviceType="NCML" base="/thredds/ncml/"/>
+    <service name="uddc" serviceType="UDDC" base="/thredds/uddc/"/>
+    <service name="iso" serviceType="ISO" base="/thredds/iso/"/>
+    <service name="ncdods" serviceType="OPENDAP" base="/thredds/dodsC/"/>
+    <service name="HTTPServer" serviceType="HTTPServer" base="/thredds/fileServer/"/>
+  </service>
+  <!-- GFZ Data Sets -->
+  <dataset name="GFZ DATA SETS">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+      <authority>www.eumetsat.int</authority>
+      <dataFormat>ASCII</dataFormat>
+      <documentation type="Rights">Freely available</documentation>
+      <creator>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int" email="ops@eumetsat.int"/>
+      </creator>
+      <publisher>
+        <name vocabulary="DIF">EUMETSAT</name>
+        <contact url="http://www.eumetsat.int/" email="ops@eumetsat.int"/>
+      </publisher>
+      <keyword>EUMETSAT</keyword>
+    </metadata>
+    <!-- Level 2 GFZ data ASCII -->
+    <dataset name="Level 2 ASCII">
+      <metadata inherited="true">
+        <documentation type="Summary">Level 2 GFZ data</documentation>
+        <documentation xlink:href="http://www.eumetsat.int/Home/Main/DataProducts/Resources/index.htm" xlink:title="EUMETSAT Format Guide documentation"> </documentation>
+        <!-- <keyword>Source MFG15 is rectified 0 degrees</keyword> -->
+      </metadata>
+      <datasetScan name="Level 2 GFZ Files" ID="gfzLevel2Files" path="level2GFZ" location="content/source/GFZ/LEVEL2/">
+        <filter>
+          <include wildcard="MO-AI-2-PD+*"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="true"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+    <!-- Level 3 GFZ data ASCII -->
+    <dataset name="Level 3 ASCII">
+      <metadata inherited="true">
+        <documentation type="Summary">Level 3 FFZ data</documentation>
+        <documentation xlink:href="http://www.eumetsat.int/Home/Main/DataProducts/Resources/index.htm" xlink:title="EUMETSAT Format Guide documentation"> </documentation>
+        <!-- <keyword>Meteosat Second Generation Radiance Data</keyword> -->
+      </metadata>
+      <datasetScan name="Level 3 GFZ Files" ID="gfzLevel3Files" path="level3GFZ" location="content/source/GFZ/LEVEL3/">
+        <filter>
+          <include wildcard="MO-AI-3-ATM+*"/>
+        </filter>
+        <sort>
+          <lexigraphicByName increasing="true"/>
+        </sort>
+        <addDatasetSize/>
+      </datasetScan>
+    </dataset>
+  </dataset>
+</catalog>
